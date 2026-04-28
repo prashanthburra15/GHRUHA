@@ -11,23 +11,17 @@ users = db["users"]
 # 🔐 Signup
 @router.post("/signup")
 def signup(user: User):
-    try:
-        if users.find_one({"email": user.email}):
-            raise HTTPException(status_code=400, detail="User already exists")
+    if users.find_one({"email": user.email}):
+        raise HTTPException(status_code=400, detail="User already exists")
 
-        user_data = user.model_dump()
+    hashed_password = hash_password(user.password)
 
+    users.insert_one({
+        "email": user.email,
+        "password": hashed_password
+    })
 
-        password = user.password[:72]
-
-        user_data["password"] = hash_password(password)
-
-        users.insert_one(user_data)
-
-        return {"message": "User created successfully"}
-
-    except Exception as e:
-        return {"error": str(e)}
+    return {"message": "User created successfully"}
     
 
 # 🔐 Login
@@ -35,10 +29,13 @@ def signup(user: User):
 def login(user: LoginUser):
     db_user = users.find_one({"email": user.email})
 
-    if not db_user:
+    if not db_user or "password" not in db_user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    if not verify_password(user.password, db_user["password"]):
+    try:
+        if not verify_password(user.password, db_user["password"]):
+            raise HTTPException(status_code=401, detail="Invalid credentials")
+    except Exception:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     token = create_access_token({"sub": user.email})
