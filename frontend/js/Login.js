@@ -6,8 +6,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
   console.log("Sending:", email, password); // 👈 DEBUG
 
+  const BASE_URL = "https://ghruha.onrender.com";
   try {
-    const res = await fetch("https://ghruha.onrender.com/login", {
+    const res = await fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

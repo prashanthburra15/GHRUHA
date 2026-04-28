@@ -4,12 +4,13 @@ async function getAISuggestion() {
   const bedrooms = document.getElementById("property-bedrooms")?.value;
   const location = document.getElementById("property-location")?.value;
   const price = document.getElementById("property-price")?.value;
+  const BASE_URL = "https://ghruha.onrender.com";
 
   // 🚫 Skip if required fields empty
   if (!area || !bedrooms || !location) return;
-
+  
   try {
-    const res = await fetch("https://ghruha.onrender.com/predict", {
+    const res = await fetch(`${BASE_URL}/redict`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

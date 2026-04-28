@@ -6,6 +6,8 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirm-password").value;
 
+  const BASE_URL = "https://ghruha.onrender.com";
+
   // ✅ Check passwords match
   if (password !== confirmPassword) {
     alert("❌ Passwords do not match");
@@ -13,7 +15,7 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("https://ghruha.onrender.com/signup", {
+    const res = await fetch('${BASE_URL}//signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
