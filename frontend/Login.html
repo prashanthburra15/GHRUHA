@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing.com Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/Login.css">
+</head>
+<body class="bg-gray-100">
+
+  <!-- 🔝 Navbar -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-black tracking-wide text-gray-900">
+      GHRUHA.COM
+    </a>
+
+    <nav class="flex items-center space-x-4">
+      <a href="index.html" class="text-blue-500">Home</a>
+      <a href="predict.html" class="text-blue-500">AI Prediction</a>
+      <a href="signup.html" class="text-blue-500">Register</a>
+    </nav>
+  </header>
+
+  <!-- 🔐 Login Card -->
+  <div class="flex justify-center items-center min-h-screen">
+    
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+
+      <h1 class="text-2xl font-bold text-center mb-6">
+        Login to GHRUHA
+      </h1>
+
+      <form id="login-form" class="space-y-4">
+
+        <!-- Email -->
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Email" 
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+
+        <!-- Password -->
+        <input 
+          type="password" 
+          id="password" 
+          placeholder="Password" 
+          required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+
+        <!-- Button -->
+        <button 
+          type="submit"
+          class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition"
+        >
+          Login
+        </button>
+
+      </form>
+
+      <!-- Footer -->
+      <p class="text-center mt-4 text-sm text-gray-600">
+        Don't have an account?
+        <a href="signup.html" class="text-blue-500 hover:underline">
+          Sign Up
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <script src="js/login.js"></script>
+
+</body>
+</html>

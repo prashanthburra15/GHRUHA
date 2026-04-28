@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Properties</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/saved.css">
+</head>
+<body>
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+  <a href="index.html" class="text-xl font-bold">GHRUHA.COM</a>
+
+  <nav class="flex items-center space-x-4">
+    <a href="index.html" class="text-blue-500">Home</a>
+    <a href="predict.html" class="text-blue-500">AI Prediction</a>
+
+    <div id="user-info"></div>
+
+    <a href="login.html" id="login-btn" class="text-blue-500">Login</a>
+    <a href="signup.html" id="register-btn" class="text-blue-500">Register</a>
+  </nav>
+  </header>
+
+  <main>
+    <section class="saved-properties">
+      <h1>Saved Properties</h1>
+      <div class="property-grid" id="property-grid">
+        <!-- Properties will be dynamically added here -->
+      </div>
+    </section>
+  </main>
+
+ 
+
+  <script src="js/saved.js"></script>
+</body>
+</html>

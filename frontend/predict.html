@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Rent Prediction | GHRUHA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN (for quick styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- 🔝 Navbar -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">GHRUHA.COM</h1>
+    <a href="index.html" class="text-blue-500">Home</a>
+  </header>
+
+  <!-- 🧠 Prediction Box -->
+  <div class="flex justify-center items-center mt-10">
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+
+      <h2 class="text-2xl font-bold mb-6 text-center">
+        🧠 AI Rent Prediction
+      </h2>
+
+      <!-- Inputs -->
+      <input id="area" type="number" placeholder="Area (sq ft)"
+        class="w-full p-2 mb-3 border rounded" />
+
+      <input id="bedrooms" type="number" placeholder="Bedrooms"
+        class="w-full p-2 mb-3 border rounded" />
+
+      <input id="price" type="number" placeholder="Your Expected Rent"
+        class="w-full p-2 mb-3 border rounded" />
+
+      <input id="location" type="text" placeholder="Location (e.g. Hyderabad)"
+        class="w-full p-2 mb-4 border rounded" />
+
+      <!-- Button -->
+      <button onclick="predict()"
+        class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+        Predict
+      </button>
+
+      <!-- Result -->
+      <div id="result" class="mt-6 text-center font-medium"></div>
+
+    </div>
+  </div>
+
+  <script src="js/predict.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Property</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+  <a href="index.html" class="text-xl font-bold">GHRUHA.COM</a>
+
+  <nav class="flex items-center space-x-4">
+    <a href="index.html" class="text-blue-500">Home</a>
+    <a href="predict.html" class="text-blue-500">AI Prediction</a>
+
+    <div id="user-info"></div>
+
+    <a href="login.html" id="login-btn" class="text-blue-500">Login</a>
+    <a href="signup.html" id="register-btn" class="text-blue-500">Register</a>
+  </nav>
+  </header>
+
+
+  <main>
+    <section class="post-property">
+      <h1>Post Your Property</h1>
+      <form class="property-form" id="property-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="property-type">Property Type:</label>
+          <select id="property-type" name="property-type" required>
+            <option value="">Select property type</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="plot">Plot</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="property-photos">Property Photos:</label>
+          <input type="file" id="property-photos" name="property-photos[]" multiple required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-price">Property Price:</label>
+          <input type="number" id="property-price" name="property-price" required>
+        </div>
+
+        <div id="ai-suggestion" class="mt-4 text-sm text-gray-700"></div>
+
+        <div class="form-group">
+          <label for="property-location">Property Location:</label>
+          <input type="text" id="property-location" name="property-location" required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-bedrooms">Number of Bedrooms:</label>
+          <input type="number" id="property-bedrooms" name="property-bedrooms" required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-bathrooms">Number of Bathrooms:</label>
+          <input type="number" id="property-bathrooms" name="property-bathrooms" required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-area">Property Area (sq ft):</label>
+          <input type="number" id="property-area" name="property-area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-title">Property Title:</label>
+          <input type="text" id="property-title" name="property-title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="property-description">Property Description:</label>
+          <textarea id="property-description" name="property-description" required></textarea>
+        </div>
+
+        <button type="submit" class="post-button">Post Property</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    </footer>
+
+  <script src="js/post.js"></script>
+</body>
+</html>
