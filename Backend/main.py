@@ -20,7 +20,7 @@ app = FastAPI()
 # ✅ CORS MUST COME FIRST
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for development
+    allow_origins=["https://ghruha.netlify.app"],  # for development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
