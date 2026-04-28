@@ -9,7 +9,7 @@ async function getAISuggestion() {
   if (!area || !bedrooms || !location) return;
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/predict", {
+    const res = await fetch("https://ghruha.onrender.com/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(form);
 
       try {
-        const res = await fetch("http://127.0.0.1:8000/add-property", {
+        const res = await fetch("https://ghruha.onrender.com/add-property", {
           method: "POST",
           body: formData
         });

@@ -4,7 +4,7 @@ async function predict() {
   const price = document.getElementById("price").value;
   const location = document.getElementById("location").value;
 
-  const res = await fetch("http://127.0.0.1:8000/predict", {
+  const res = await fetch("https://ghruha.onrender.com/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
